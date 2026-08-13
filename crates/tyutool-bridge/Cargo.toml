@@ -1,6 +1,6 @@
 [package]
 name = "tyutool-bridge"
-version = "3.2.8"
+version = "3.2.9"
 edition = "2021"
 description = "Cobuilder Bridge — resident local WebSocket flash helper with a tray shell (--headless for CI)"
 # Required by rpm packaging (cargo-generate-rpm writes it into the spec's

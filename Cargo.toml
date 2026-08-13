@@ -12,12 +12,15 @@ members = [
 # `version.workspace = true`, so the three Cargo.toml files cannot drift apart.
 # scripts/lib/version-files.mjs rewrites this key; see that module before adding
 # a new version-bearing file.
-# ⚠ Fork-added tyutool-bridge does **not** follow this version: it has its own
-# release line (tag prefix bridge-v*, disjoint from upstream's v*.*.*), and
-# bridge.yml greps its literal `version = "…"` line to label artifacts — see
-# INDEPENDENT_VERSION_MEMBERS in scripts/lib/version-files.test.ts. The other
-# fork-added member, tyutool-serve, is an internal crate whose version nothing
-# consumes, so it inherits like everyone else. Upstream's "three Cargo.toml
-# files" above meant its own three members; more members, same semantics.
+# ⚠ Fork-added tyutool-bridge keeps a **literal** version: its release line is
+# separate (tag prefix bridge-v*, disjoint from upstream's v*.*.*, cut on its
+# own schedule) and bridge.yml greps the literal `version = "…"` line to label
+# artifacts — see INDEPENDENT_VERSION_MEMBERS in
+# scripts/lib/version-files.test.ts. The version *number* tracks the upstream
+# release train (bump it by hand when cutting a bridge release), but the key
+# must stay literal. The other fork-added member, tyutool-serve, is an internal
+# crate whose version nothing consumes, so it inherits like everyone else.
+# Upstream's "three Cargo.toml files" above meant its own three members; more
+# members, same semantics.
 [workspace.package]
 version = "3.2.8"

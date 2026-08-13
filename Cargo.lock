@@ -6055,7 +6055,7 @@ checksum = "562d481066bde0658276a35467c4af00bdc6ee726305698a55b86e61d7ad82bb"
 
 [[package]]
 name = "tyutool-bridge"
-version = "0.2.7"
+version = "3.2.8"
 dependencies = [
  "anyhow",
  "auto-launch",
@@ -6128,7 +6128,7 @@ dependencies = [
 
 [[package]]
 name = "tyutool-serve"
-version = "0.1.0"
+version = "3.2.8"
 dependencies = [
  "anyhow",
  "base64 0.22.1",

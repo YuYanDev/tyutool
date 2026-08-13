@@ -28,12 +28,13 @@ describe('VERSION_FILES', () => {
     expect(listed).toContain('Cargo.toml');
   });
 
-  // Members that version independently of the workspace, each with a reason:
-  //  · tyutool-bridge — Cobuilder Bridge ships on its own release cadence
-  //    (0.x, bumped by hand per release), and bridge.yml labels artifacts by
-  //    grepping the literal `version = "…"` line out of its Cargo.toml.
-  //    Inheriting the workspace version would break that grep and yoke the
-  //    bridge to the upstream release train.
+  // Members that declare their version independently of the workspace, each
+  // with a reason:
+  //  · tyutool-bridge — Cobuilder Bridge ships on its own release schedule
+  //    (bridge-v* tags, bumped by hand per release; the number tracks the
+  //    upstream train but the key stays literal), and bridge.yml labels
+  //    artifacts by grepping the literal `version = "…"` line out of its
+  //    Cargo.toml — inheritance would break that grep.
   // Adding an entry here requires the same kind of documented reason.
   const INDEPENDENT_VERSION_MEMBERS = ['crates/tyutool-bridge'];
 
